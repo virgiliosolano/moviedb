@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="zero">0dp</dimen>
     <dimen name="image_padding">20dp</dimen>
+    <dimen name="card_elevation">3dp</dimen>
 </resources>
