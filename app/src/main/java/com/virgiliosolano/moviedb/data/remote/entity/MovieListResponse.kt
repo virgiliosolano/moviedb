@@ -1,3 +1,3 @@
-package com.virgiliosolano.moviedb.data.remote.dto
+package com.virgiliosolano.moviedb.data.remote.entity
 
-data class MovieListResponse(val results: List<MovieDTO>?)
+data class MovieListResponse(val results: List<MovieResponse>?)

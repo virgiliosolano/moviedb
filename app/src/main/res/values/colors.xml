@@ -5,7 +5,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Movie theme -->
+    <!-- MovieView theme -->
     <color name="dark_blue">#FF0D253F</color>
     <color name="light_blue">#FF01B4E4</color>
     <color name="light_green">#FF90CEA1</color>

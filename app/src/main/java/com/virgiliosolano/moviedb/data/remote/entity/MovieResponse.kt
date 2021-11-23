@@ -1,9 +1,9 @@
-package com.virgiliosolano.moviedb.data.remote.dto
+package com.virgiliosolano.moviedb.data.remote.entity
 
 import com.google.gson.annotations.SerializedName
 import com.virgiliosolano.moviedb.BuildConfig.TMDB_POSTER_MEDIUM_URL
 
-data class MovieDTO(
+data class MovieResponse(
     val id: Int,
     val title: String?,
     val overview: String?,

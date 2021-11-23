@@ -4,13 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.virgiliosolano.moviedb.BuildConfig
 import com.virgiliosolano.moviedb.R
+import com.virgiliosolano.moviedb.data.local.entity.Movie
 import com.virgiliosolano.moviedb.extensions.loadImage
-import com.virgiliosolano.moviedb.model.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
 
-class MoviesAdapter(private val movieList: ArrayList<Movie>,
+class MoviesAdapter(private val movieViewList: ArrayList<Movie>,
                     private val onItemClickListener: OnItemClickListener ) :
     RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
 
@@ -20,7 +19,7 @@ class MoviesAdapter(private val movieList: ArrayList<Movie>,
         fun bind(movie: Movie, onItemClickListener: OnItemClickListener) {
             itemView.apply {
                 this.tvMovieTitle.text = movie.title
-                this.ivMoviePoster.loadImage(BuildConfig.TMDB_POSTER_URL.plus(movie.poster_path))
+                this.ivMoviePoster.loadImage(movie.posterUrl)
                 this.setOnClickListener {onItemClickListener.onItemClick(movie.id)}
             }
         }
@@ -34,15 +33,15 @@ class MoviesAdapter(private val movieList: ArrayList<Movie>,
         }
     }
 
-    override fun getItemCount(): Int = movieList.size
+    override fun getItemCount(): Int = movieViewList.size
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.bind(movieList[position], onItemClickListener)
+        holder.bind(movieViewList[position], onItemClickListener)
     }
 
     fun updateMovies(movieList: List<Movie>) {
-        this.movieList.clear()
-        this.movieList.addAll(movieList)
+        this.movieViewList.clear()
+        this.movieViewList.addAll(movieList)
         notifyDataSetChanged()
     }
 }

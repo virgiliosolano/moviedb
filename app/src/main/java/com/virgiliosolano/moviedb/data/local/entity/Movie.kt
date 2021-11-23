@@ -1,4 +1,4 @@
-package com.virgiliosolano.moviedb.data.model
+package com.virgiliosolano.moviedb.data.local.entity
 
 import androidx.annotation.NonNull
 import androidx.room.Entity
@@ -12,5 +12,5 @@ data class Movie(
     val title: String?,
     val overview: String?,
     val popularity: Double,
-    val poster_path: String
+    val posterUrl: String?
 )

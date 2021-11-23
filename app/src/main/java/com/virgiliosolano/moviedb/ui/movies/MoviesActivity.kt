@@ -1,19 +1,30 @@
 package com.virgiliosolano.moviedb.ui.movies
 
 import android.os.Bundle
+import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.virgiliosolano.moviedb.R
 import dagger.hilt.android.AndroidEntryPoint
+import com.virgiliosolano.moviedb.util.Result
 import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MoviesActivity : OnItemClickListener, AppCompatActivity() {
+
+    private val moviesViewModel by viewModels<MoviesViewModel>()
+    private lateinit var moviesAdapter: MoviesAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         setupView()
+        subscribeUi()
     }
 
     private fun setupView() {
@@ -24,13 +35,36 @@ class MoviesActivity : OnItemClickListener, AppCompatActivity() {
             rvMovies.addItemDecoration(
                 DividerItemDecoration(
                     rvMovies.context,
-                    llManager.orientation
+                    0
             ))
         }
 
-        MoviesAdapter(ArrayList(), this).also {
+        moviesAdapter = MoviesAdapter(ArrayList(), this).also {
             rvMovies.adapter = it
         }
+    }
+
+    private fun subscribeUi() {
+        moviesViewModel.movieList.observe(this, Observer { result ->
+
+            when (result.status) {
+                Result.Status.SUCCESS -> {
+                    result.data?.results?.let { list ->
+                        moviesAdapter.updateMovies(list)
+                    }
+                    ivLogo.visibility = View.GONE
+                }
+
+                Result.Status.ERROR -> {
+                    result.message?.let {}
+                    ivLogo.visibility = View.GONE
+                }
+
+                Result.Status.LOADING -> {
+                    ivLogo.visibility = View.VISIBLE
+                }
+            }
+        })
     }
 
     override fun onItemClick(movieId: Int) {}
