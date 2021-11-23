@@ -3,5 +3,16 @@
     <dimen name="zero">0dp</dimen>
     <dimen name="image_padding">20dp</dimen>
     <dimen name="card_elevation">3dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
     <dimen name="default_padding">20dp</dimen>
+    <dimen name="card_width">280dp</dimen>
+    <dimen name="text_margin_top">37dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+
+    <dimen name="card_item_width">200dp</dimen>
+    <dimen name="card_item_padding_end">10dp</dimen>
+    <dimen name="card_item_margin_bottom">10dp</dimen>
+    <dimen name="card_item_description">18sp</dimen>
+
+    <dimen name="description">20sp</dimen>
 </resources>

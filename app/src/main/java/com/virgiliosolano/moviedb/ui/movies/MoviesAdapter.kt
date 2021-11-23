@@ -19,8 +19,10 @@ class MoviesAdapter(private val movieViewList: ArrayList<Movie>,
         fun bind(movie: Movie, onItemClickListener: OnItemClickListener) {
             itemView.apply {
                 this.tvMovieTitle.text = movie.title
-                this.ivMoviePoster.loadImage(movie.posterUrl)
-                this.setOnClickListener {onItemClickListener.onItemClick(movie.id)}
+                this.ivMoviePoster.loadImage(movie.backdropUrl)
+                this.setOnClickListener {
+                    onItemClickListener.onItemClick(movie.id, movie.title.orEmpty())
+                }
             }
         }
     }

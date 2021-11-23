@@ -7,11 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
 import com.virgiliosolano.moviedb.R
+import com.virgiliosolano.moviedb.extensions.launchActivity
+import com.virgiliosolano.moviedb.ui.moviedetails.MovieDetailsActivity
+import com.virgiliosolano.moviedb.ui.moviedetails.MovieDetailsActivity.Companion.MOVIE_ID
+import com.virgiliosolano.moviedb.ui.moviedetails.MovieDetailsActivity.Companion.MOVIE_NAME
 import dagger.hilt.android.AndroidEntryPoint
 import com.virgiliosolano.moviedb.util.Result
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_movies.*
 
 @AndroidEntryPoint
 class MoviesActivity : OnItemClickListener, AppCompatActivity() {
@@ -21,7 +24,7 @@ class MoviesActivity : OnItemClickListener, AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_movies)
 
         setupView()
         subscribeUi()
@@ -67,5 +70,10 @@ class MoviesActivity : OnItemClickListener, AppCompatActivity() {
         })
     }
 
-    override fun onItemClick(movieId: Int) {}
+    override fun onItemClick(movieId: Int, movieName: String) {
+        launchActivity<MovieDetailsActivity> {
+            putExtra(MOVIE_ID, movieId)
+            putExtra(MOVIE_NAME, movieName)
+        }
+    }
 }

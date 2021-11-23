@@ -1,5 +1,5 @@
 package com.virgiliosolano.moviedb.ui.movies
 
 interface OnItemClickListener {
-    fun onItemClick(movieId: Int)
+    fun onItemClick(movieId: Int, movieName: String)
 }

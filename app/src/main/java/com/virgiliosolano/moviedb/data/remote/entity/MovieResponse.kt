@@ -9,8 +9,12 @@ data class MovieResponse(
     val overview: String?,
     val popularity: Double,
     @SerializedName("poster_path") val posterPath: String?,
+    @SerializedName("backdrop_path") val backdropPath: String?,
 ){
     val posterLink: String?
         get() =
             if (posterPath != null) TMDB_POSTER_MEDIUM_URL.plus("$posterPath") else null
+    val backdropLink: String?
+        get() =
+            if (backdropPath != null) TMDB_POSTER_MEDIUM_URL.plus("$backdropPath") else null
 }

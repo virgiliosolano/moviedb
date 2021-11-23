@@ -9,6 +9,7 @@ fun MovieResponse.toMovieEntity(): Movie {
         title = title,
         overview = overview,
         popularity= popularity,
-        posterUrl = posterLink
+        posterUrl = posterLink,
+        backdropUrl = backdropLink
     )
 }
