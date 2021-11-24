@@ -28,15 +28,13 @@ class MovieRepository @Inject constructor(
             if (result.status == Result.Status.SUCCESS) {
                 result.data?.results?.let { it ->
                     movieDao.clearMovies()
-
                     it.map { movie ->
                         movieEntityList.add(movie.toMovieEntity())
                     }
-
                     movieDao.insertMovies(movieEntityList)
                 }
+                emit(Result.success(MovieEntityList(movieEntityList)))
             }
-            emit(Result.success(MovieEntityList(movieEntityList)))
         }.flowOn(Dispatchers.IO)
     }
 

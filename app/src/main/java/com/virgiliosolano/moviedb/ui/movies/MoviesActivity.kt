@@ -50,7 +50,6 @@ class MoviesActivity : OnItemClickListener, AppCompatActivity() {
 
     private fun subscribeUi() {
         moviesViewModel.movieList.observe(this, Observer { result ->
-
             when (result.status) {
                 Result.Status.SUCCESS -> {
                     result.data?.results?.let { list ->
