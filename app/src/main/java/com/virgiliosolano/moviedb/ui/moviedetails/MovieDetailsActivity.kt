@@ -2,6 +2,7 @@ package com.virgiliosolano.moviedb.ui.moviedetails
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -38,11 +39,11 @@ class MovieDetailsActivity : AppCompatActivity() {
         intent?.getIntExtra(MOVIE_ID, 0)?.let { id ->
             viewModel.getMovieDetails(id)
             observeMovie()
-        } ?: showError(UNKNOWN_MOVIE)
+        }
 
         intent?.getStringExtra(MOVIE_NAME)?.let { name ->
             supportActionBar?.title = name
-        } ?: showError(UNKNOWN_MOVIE)
+        }
     }
 
     private fun observeMovie() {
@@ -57,7 +58,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
                 Result.Status.ERROR -> {
                     result.message?.let {
-                        showError(it)
+                        Toast.makeText(applicationContext, it, Toast.LENGTH_LONG)
                     }
                     loading.visibility = View.GONE
                 }
@@ -67,11 +68,6 @@ class MovieDetailsActivity : AppCompatActivity() {
                 }
             }
         })
-    }
-
-    private fun showError(msg: String) {
-        Snackbar.make(svContentDetails, msg, Snackbar.LENGTH_INDEFINITE).setAction("DISMISS") {
-        }.show()
     }
 
      private fun showMovieDetails(movie: Movie) {

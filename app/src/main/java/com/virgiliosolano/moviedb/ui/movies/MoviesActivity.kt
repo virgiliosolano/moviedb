@@ -2,6 +2,7 @@ package com.virgiliosolano.moviedb.ui.movies
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -59,7 +60,9 @@ class MoviesActivity : OnItemClickListener, AppCompatActivity() {
                 }
 
                 Result.Status.ERROR -> {
-                    result.message?.let {}
+                    result.message?.let {
+                        Toast.makeText(applicationContext, it, Toast.LENGTH_LONG)
+                    }
                     ivLogo.visibility = View.GONE
                 }
 
