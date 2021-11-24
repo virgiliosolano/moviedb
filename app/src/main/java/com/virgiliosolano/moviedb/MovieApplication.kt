@@ -1,5 +1,7 @@
 package com.virgiliosolano.moviedb
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class MovieAplication : Application()
+@HiltAndroidApp
+class MovieApplication : Application()
