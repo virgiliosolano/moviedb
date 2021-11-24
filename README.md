@@ -22,6 +22,14 @@ To run this project, you will need to add the following environment variables to
 Create your key on: https://www.themoviedb.org/settings/api
 
 
+## Architecture & Scope
+
+This project use MVVM Architecture concepts, Coroutines between Repository and ViewModel, LiveData between ViewModel and UI.
+
+<img src="https://user-images.githubusercontent.com/3596713/143245326-ebf6b1b3-a838-4049-84a6-5eb41db2fad0.png" width="500">
+<img src="https://user-images.githubusercontent.com/3596713/143245298-8cabcad3-6046-45c0-8e6d-11c6f3a52d41.jpg" width="500">
+
+
 ## Screenshots
 
 <img align="left" src="https://user-images.githubusercontent.com/3596713/143174150-65c371ad-f878-4a28-b0cf-be365a7bf4d8.jpg" width="250" hspace="20">
