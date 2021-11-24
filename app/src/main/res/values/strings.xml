@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movies</string>
+    <string name="popularity">Popularity</string>
+    <string name="releaseDate">Release Date: %s</string>
+    <string name="popularity_views">Popularity Views: %s</string>
+    <string name="average">Average: %s/10</string>
+    <string name="homepage">Home Page:\n%s</string>
 </resources>

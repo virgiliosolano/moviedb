@@ -48,7 +48,17 @@ class MovieRepository @Inject constructor(
     suspend fun fetchMovie(id: Int): Flow<Result<Movie>> {
         return flow {
             emit(Result.loading())
-            emit(movieRemoteDataSource.fetchMovie(id))
+            emit(Result.success(movieDao.getMovieById(id)))
+
+            val result = movieRemoteDataSource.fetchMovie(id)
+
+            if (result.status == Result.Status.SUCCESS) {
+                result.data?.let {
+                    val movieEntity = it.toMovieEntity()
+                    movieDao.insertMovie(movieEntity)
+                    emit(Result.success(movieEntity))
+                }
+            }
         }.flowOn(Dispatchers.IO)
     }
 }

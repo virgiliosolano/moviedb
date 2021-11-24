@@ -8,6 +8,9 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import javax.inject.Inject
 import com.virgiliosolano.moviedb.util.Result
+import com.google.gson.annotations.SerializedName
+import com.virgiliosolano.moviedb.data.remote.entity.MovieResponse
+
 
 private const val FETCH_MOVIE_LIST_ERROR = "An error occurred when fetching MovieView list"
 private const val FETCH_MOVIE_ERROR = "An error occurred when fetching MovieView"
@@ -24,7 +27,7 @@ class MovieRemoteDataSource @Inject constructor(private val retrofit: Retrofit) 
         }
     }
 
-    suspend fun fetchMovie(id: Int): Result<Movie> {
+    suspend fun fetchMovie(id: Int): Result<MovieResponse> {
         retrofit.create(MovieService::class.java).run {
             return getResponse(
                 request = { this.getMovie(id) },
@@ -39,8 +42,8 @@ class MovieRemoteDataSource @Inject constructor(private val retrofit: Retrofit) 
     ): Result<T> {
         return try {
             request.invoke().run {
-                if (this.isSuccessful) {
-                    return Result.success(this.body())
+                return if (this.isSuccessful) {
+                    Result.success(this.body())
                 } else {
                     val errorResponse = ErrorUtils.parseError(this, retrofit)
                     Result.error(errorResponse?.message ?: defaultErrorMessage, errorResponse)

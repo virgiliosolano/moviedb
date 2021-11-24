@@ -13,6 +13,8 @@
     <dimen name="card_item_padding_end">10dp</dimen>
     <dimen name="card_item_margin_bottom">10dp</dimen>
     <dimen name="card_item_description">18sp</dimen>
+    <dimen name="description_space_line">5dp</dimen>
 
-    <dimen name="description">20sp</dimen>
+    <dimen name="title_details">18sp</dimen>
+    <dimen name="description">14sp</dimen>
 </resources>

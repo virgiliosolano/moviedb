@@ -12,8 +12,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MoviesViewModel @Inject constructor(private val movieRepository: MovieRepository) :
-    ViewModel() {
+class MoviesViewModel
+@Inject
+constructor(private val movieRepository: MovieRepository) : ViewModel() {
 
     private val _movieList = MutableLiveData<Result<MovieEntityList>>()
     val movieList = _movieList
