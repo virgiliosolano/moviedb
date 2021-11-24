@@ -24,16 +24,11 @@ Create your key on: https://www.themoviedb.org/settings/api
 
 ## Screenshots
 
-![Screenshot_20211124-004654_One UI Home](https://user-images.githubusercontent.com/3596713/143174150-65c371ad-f878-4a28-b0cf-be365a7bf4d8.jpg | width=100)
-
-![Screenshot_20211124-004720_One UI Home](https://user-images.githubusercontent.com/3596713/143174158-f34032cb-c698-4ba2-b04d-88da858b8771.jpg | width=100)
-
-![Screenshot_20211124-004725_Movies](https://user-images.githubusercontent.com/3596713/143174162-0d130829-53e1-4b55-be09-cae6921c5363.jpg | width=100)
-
-![Screenshot_20211124-004732_Movies](https://user-images.githubusercontent.com/3596713/143174169-250f5b89-8963-4eb2-9760-b71d5e73ec71.jpg | width=100)
-
-![Screenshot_20211124-004743_Movies](https://user-images.githubusercontent.com/3596713/143174173-f8a243a5-1a36-430d-b93b-ad17d5f515ee.jpg | width=100)
-
+<img src="https://user-images.githubusercontent.com/3596713/143174150-65c371ad-f878-4a28-b0cf-be365a7bf4d8.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/3596713/143174158-f34032cb-c698-4ba2-b04d-88da858b8771.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/3596713/143174162-0d130829-53e1-4b55-be09-cae6921c5363.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/3596713/143174169-250f5b89-8963-4eb2-9760-b71d5e73ec71.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/3596713/143174173-f8a243a5-1a36-430d-b93b-ad17d5f515ee.jpg" width="300">
 
 ## Demo
 <img src="https://user-images.githubusercontent.com/3596713/143174117-331ff430-6c79-45c4-b5fe-67db32d85cf5.gif" width="300">
