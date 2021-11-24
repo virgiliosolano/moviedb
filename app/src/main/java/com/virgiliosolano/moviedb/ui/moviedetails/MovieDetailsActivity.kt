@@ -78,7 +78,7 @@ class MovieDetailsActivity : AppCompatActivity() {
          ivMoviePosterDetail.loadImage(movie.backdropUrl)
          tvMovieTitle.text = movie.originalTitle
          tvDescription.text = movie.overview
-         tvMovieGenre.text = movie.genres
+         tvMovieGenre.text = getString(R.string.gender, movie.genres)
          tvMovieHomePage.text = getString(R.string.homepage, movie.homepage)
          tvMoviePopularity.text = getString(R.string.popularity_views,movie.popularity.toString())
          tvReleaseDate.text = getString(R.string.releaseDate, movie.releaseDate)

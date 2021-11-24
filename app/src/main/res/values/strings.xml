@@ -5,4 +5,5 @@
     <string name="popularity_views">Popularity Views: %s</string>
     <string name="average">Average: %s/10</string>
     <string name="homepage">Home Page:\n%s</string>
+    <string name="gender">Gender:\n%s</string>
 </resources>

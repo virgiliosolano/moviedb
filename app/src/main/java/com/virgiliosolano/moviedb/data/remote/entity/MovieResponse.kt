@@ -27,14 +27,6 @@ data class MovieResponse(
     val backdropLink: String?
         get() =
             if (backdropPath != null) TMDB_POSTER_MEDIUM_URL.plus("$backdropPath") else null
-    val genresFormatted : String
-        get() = {
-            val genreList = ""
-            genres.forEach {
-                genreList.plus(it.name).plus(" ")
-            }
-            genreList
-        }.toString()
 }
 
 data class Genre(
