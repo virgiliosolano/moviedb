@@ -36,8 +36,7 @@ Create your key on: https://www.themoviedb.org/settings/api
 
 
 ## Demo
-![my_demonstration](https://user-images.githubusercontent.com/3596713/143174117-331ff430-6c79-45c4-b5fe-67db32d85cf5.gif | width=300)
-
+<img src="https://user-images.githubusercontent.com/3596713/143174117-331ff430-6c79-45c4-b5fe-67db32d85cf5.gif" width="300">
 
 ## Features
 
