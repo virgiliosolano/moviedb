@@ -33,7 +33,11 @@ android {
         }
         release {
             debuggable false
-            minifyEnabled false
+            minifyEnabled true
+            buildConfigField("String", "TMDB_API_KEY", "\"" + localProperties['movieApiKey'] + "\"")
+            buildConfigField("String", "TMDB_POSTER_URL", "\"" + "https://image.tmdb.org/t/p/original/" + "\"")
+            buildConfigField("String", "TMDB_POSTER_MEDIUM_URL", "\"" + "https://image.tmdb.org/t/p/w500" + "\"")
+            buildConfigField("String", "TMDB_BASE_URL", "\"" + "https://api.themoviedb.org/3/" + "\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
